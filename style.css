@@ -1,0 +1,308 @@
+:root {
+  --box-shadow: -5px 5px 30px 5px grey;
+}
+/* --kei name to make a code to use anywhere */
+
+body {
+  margin: 0;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+/* ====global  */
+.global {
+  background: rgba(255, 0, 0, 0.377);
+}
+
+/* button aru sanga mis match nahos bhanera mathi lekheko */
+.button {
+  background: orange;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  /* box-shadow: -5px 5px 30px 5px grey; */
+  box-shadow: var(--box-shadow);
+  /* yesari pani use garna milxa  */
+  text-align: center;
+  /* recommdendation ko explore lai bich ma lana  */
+}
+/* without touching container edit garna div is child of gloabl so we use this code  */
+.global > div {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 10px 0;
+  color: white;
+}
+
+/* =====Header  */
+
+header {
+  background: blue;
+}
+
+header > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  color: white;
+}
+
+header ul {
+  display: flex;
+  list-style-type: none;
+}
+
+header ul li {
+  margin-left: 16px;
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+header ul li:hover {
+  cursor: pointer;
+  background: red;
+  transform: scale(1.5);
+}
+
+.logo {
+  background: white;
+  color: blue;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  font-weight: 700;
+  /* the more circle you want the more % you make and you need to choose same width and height */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo div {
+  /* rounded dotted border banauna  */
+  border: 3px dotted blue;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  /* these code is to put the content in the centre  */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* =======Hero  */
+
+.hero {
+  background: url(./img/Hero.jpg) no-repeat center center;
+  /* two centre for X and Y axis */
+  background-size: cover;
+  min-height: 60vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-content {
+  background: rgba(0, 0, 0, 0.469);
+  color: white;
+  width: 500px;
+
+  padding: 32px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-content hr {
+  /* sano line lai tankauna  */
+  width: 100%;
+}
+
+/* ====Latest post  */
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+.articles {
+  /* background: red; */
+  width: 66%;
+}
+
+article {
+  display: flex;
+  gap: 16px;
+  box-shadow: -5px 5px 30px 5px grey;
+  padding: 20px 16px;
+  border-radius: 10px;
+  margin-top: 24px;
+}
+
+.art-img {
+  width: 250px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  color: blue;
+}
+
+article .button {
+  float: right;
+}
+
+/* ======side links  */
+
+.side-links {
+  width: 34%;
+}
+
+.country {
+  background: rgba(255, 255, 0, 0.737);
+  padding: 16px;
+  border-radius: 5px;
+  margin-bottom: 32px;
+}
+
+.date {
+  background: rgba(255, 255, 0, 0.737);
+  padding: 16px;
+  border-radius: 5px;
+}
+
+/* =====recmdn */
+.recmdn {
+  background: rgba(187, 199, 15, 0.801);
+  margin-top: 64px;
+  padding: 46px 0;
+}
+
+.card-list {
+  margin-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  /* justify-content: center; */
+}
+
+.card {
+  width: 350px;
+  box-shadow: var(--box-shadow);
+  background: white;
+  padding-bottom: 32px;
+  border-radius: 10px;
+  flex-grow: 1;
+  /* use instead of justify content  */
+}
+
+.card img {
+  border-radius: 10px 10px 0 0;
+}
+
+/* =======subscribe */
+.subs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 32px 0;
+}
+
+.subs input {
+  line-height: 42px;
+  border-radius: 8px;
+  border: 1px solid grey;
+  margin-right: 16px;
+}
+
+/* =====footer  */
+.footer {
+  background: black;
+  color: white;
+  padding: 50px;
+  text-align: center;
+  margin-top: 16px;
+}
+
+/* ===== media queries====  */
+
+/* small size should be written at the bottom just so thulo ley overwrite nagaros */
+/* Tablets  */
+
+/* max-width huda thulo mathi ani sano muni ani viceversa for min-width */
+/* @media (max-width: 992px) {
+  .global {
+    background: red;
+  }
+} */
+
+/* phones  */
+/* @media (max-width: 768px) {
+  .global {
+    background: pink;
+  }
+} */
+
+/* Tablets */
+
+@media (max-width: 992px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .articles {
+    width: 100%;
+  }
+
+  .side-links {
+    width: 100%;
+    display: flex;
+    gap: 32px;
+  }
+
+  .country,
+  .date {
+    width: 50%;
+    height: 300px;
+    margin-top: 48px;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+/* Mobile phones  */
+@media (max-width: 768px) {
+  article {
+    display: flex;
+    flex-direction: column;
+  }
+  .art-img {
+    width: 100%;
+  }
+
+  article .button {
+    width: 100%;
+  }
+  .side-links {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .country,
+  .date {
+    width: 100%;
+    margin-top: 16px;
+  }
+}
